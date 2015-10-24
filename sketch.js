@@ -33,5 +33,6 @@ function draw(){
  var vol = analyzer.getLevel();
  fill(127);
  stroke(0);
- sphere(width/2, height/2, 10+vol*200, 10+vol*200);
+ sphere(10+vol*200, 10+vol*200);
+ //sphere(width/2, height/2, 10+vol*200, 10+vol*200);
 }
