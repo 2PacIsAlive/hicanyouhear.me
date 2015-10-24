@@ -9,6 +9,7 @@ function setup(){
   createCanvas(windowWidth, windowHeight, WEBGL);
   analyzer = new p5.Amplitude();
   analyzer.setInput(song);
+  song.play();
 }
 
 function getRandom(min, max) {
@@ -31,7 +32,8 @@ function draw(){
  specularMaterial(56);
  //sphere(200, 128);
  var vol = analyzer.getLevel();
- fill(127);
+ random = getRandom(0,250);
+ fill(random);
  stroke(0);
  sphere(10+vol*200, 10+vol*200);
  //sphere(width/2, height/2, 10+vol*200, 10+vol*200);
