@@ -25,12 +25,13 @@ function mousePressed() {
 
 function draw(){
  random = getRandom(0,250);
- background(30);
+ background(random);
  ambientLight(100);
  pointLight(250, 250, 250, 100, 100, 0);
  specularMaterial(56);
  //sphere(200, 128);
  var vol = analyzer.getLevel();
+ fill(127);
  stroke(0);
  sphere(width/2, height/2, 10+vol*200, 10+vol*200);
 }
