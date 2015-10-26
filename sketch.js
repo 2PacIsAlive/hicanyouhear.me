@@ -1,15 +1,21 @@
 var random = 0;
 var song;
+var color = 0;
+var color2 = 0;
+var color3 = 0;
+var dir;
 
-function preload() {  
-  song = loadSound('assets/newb.mp3');
-}
+//function preload() {  
+  //song = loadSound('assets/newb.mp3');
+//}
 
 function setup(){
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  song = loadSound('assets/newb.mp3');  
+//createCanvas(windowWidth, windowHeight, WEBGL);
+  createCanvas(windowWidth, windowHeight)
   analyzer = new p5.Amplitude();
   analyzer.setInput(song);
-  song.play();
+  //song.play();
 }
 
 function getRandom(min, max) {
@@ -18,23 +24,55 @@ function getRandom(min, max) {
 
 function mousePressed() {
   if ( song.isPlaying() ) { 
-    song.stop();
+    song.pause();
   } else {
     song.play();
   }
 }
 
 function draw(){
- random = getRandom(0,250);
- background(random);
- ambientLight(100);
- pointLight(250, 250, 250, 100, 100, 0);
- specularMaterial(56);
+ background(0);
+ textSize(32);
+ if (song.isPlaying()) {
+    color2 = 270;
+    color3 = 80;
+   if (dir == 0) {
+     if (color < 255){
+       color = color + 1;
+       color2 = color2 + 1;
+       color3 = color3 + 1;
+     } else {
+        dir = 1;
+     }
+   } else {
+     if (color > 0){
+       color = color - 1;
+       color2 = color2 - 1;
+       color3 = color3 - 1;
+     }
+     else {
+       dir = 0;
+     }
+   }
+ } else {
+   color = 255;
+   color2 = 255;
+   color3 = 255;
+ }
+ fill(color,color2,color3);
+ text("chophaus.", windowWidth/2-55, windowHeight/2);
+ //ambientLight(100);
+ //pointLight(250, 250, 250, 100, 100, 0);
+ //specularMaterial(56);
  //sphere(200, 128);
+ if (song.isPlaying()) {
  var vol = analyzer.getLevel();
+ } else {
+ var vol = 0;
+ }
  random = getRandom(0,250);
  fill(random);
  stroke(0);
- sphere(10+vol*200, 10+vol*200);
+ ellipse(mouseX, mouseY, 10+vol*200, 10+vol*200);
  //sphere(width/2, height/2, 10+vol*200, 10+vol*200);
 }
