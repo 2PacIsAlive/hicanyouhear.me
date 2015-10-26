@@ -34,26 +34,9 @@ function draw(){
  background(0);
  textSize(32);
  if (song.isPlaying()) {
+    color = 255;
     color2 = 270;
     color3 = 80;
-   if (dir == 0) {
-     if (color < 255){
-       color = color + 1;
-       color2 = color2 + 1;
-       color3 = color3 + 1;
-     } else {
-        dir = 1;
-     }
-   } else {
-     if (color > 0){
-       color = color - 1;
-       color2 = color2 - 1;
-       color3 = color3 - 1;
-     }
-     else {
-       dir = 0;
-     }
-   }
  } else {
    color = 255;
    color2 = 255;
