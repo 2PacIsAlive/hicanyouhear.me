@@ -60,7 +60,8 @@ function draw(){
  var vol = 0;
  }
  random = getRandom(0,250);
- fill(random);
+ //fill(random);
+ fill(random,color,color2);
  stroke(0);
  ellipse(mouseX, mouseY, 10+vol*200, 10+vol*200);
  if (song.isPlaying){
