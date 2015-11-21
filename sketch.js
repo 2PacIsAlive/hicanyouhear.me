@@ -48,8 +48,8 @@ function draw(){
    color2 = 255;
    color3 = 255;
  }
- fill(color,color2,color3);
- text("chophaus.", windowWidth/2-55, windowHeight/2);
+ fill(xpos,ypos,180);
+ text("are you still there?", windowWidth/2-55, windowHeight/2);
  //ambientLight(100);
  //pointLight(250, 250, 250, 100, 100, 0);
  //specularMaterial(56);

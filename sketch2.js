@@ -10,7 +10,7 @@ var dir;
 //}
 
 function setup(){
-  song = loadSound('assets/newb.mp3');  
+  song = loadSound('assets/lonely_summer[mastered].wav');  
   reverb = new p5.Reverb();
   reverb.process(song, 6, 0.2);
   reverb.amp(0);
