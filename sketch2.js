@@ -9,8 +9,11 @@ var dir;
   //song = loadSound('assets/newb.mp3');
 //}
 
+function preload(){
+	song = loadSound('assets/lonely_summer[mastered].wav');
+}
+
 function setup(){
-  song = loadSound('assets/lonely_summer[mastered].wav');  
   reverb = new p5.Reverb();
   reverb.process(song, 6, 0.2);
   reverb.amp(0);
