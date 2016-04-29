@@ -10,7 +10,7 @@ var dir;
 //}
 
 function preload(){
-	song = loadSound('assets/lonely_summer[mastered].wav');
+    song = loadSound('assets/mala_fide.mp3'); //lonely_summer[mastered].wav');
 }
 
 function setup(){
@@ -69,8 +69,8 @@ function draw(){
  ellipse(mouseX, mouseY, 10+vol*200, 10+vol*200);
  if (song.isPlaying){
     // Set the volume to a range between 0 and 1.0
-    var volume = map(mouseX, width, 0, 4, 0);
-    volume = constrain(volume, 0, 4);
+    var volume = map(mouseX, width, 0, 1, 0);
+    volume = constrain(volume, 0, 1);
     reverb.amp(volume)
     //song.amp(volume);
 
