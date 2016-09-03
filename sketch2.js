@@ -10,7 +10,7 @@ var dir;
 //}
 
 function preload(){
-    song = loadSound('assets/mala_fide.mp3'); //lonely_summer[mastered].wav');
+    song = loadSound('assets/ontherooftopwithyogirl.mp3'); 
 }
 
 function setup(){
