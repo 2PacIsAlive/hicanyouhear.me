@@ -10,7 +10,7 @@ var dir;
 //}
 
 function preload(){
-    song = loadSound('assets/ontherooftopwithyogirl.mp3'); 
+    song = loadSound('assets/voeffect.mp3'); 
 }
 
 function setup(){
